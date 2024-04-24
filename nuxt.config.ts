@@ -3,8 +3,21 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     "@pinia/nuxt",
-    "@nuxtjs/tailwindcss",
     "@nuxt/eslint",
-    'nuxt-icon',
-  ]
-})
+    "nuxt-icon",
+    "nuxt-svgo",
+    "@nuxtjs/google-fonts",
+    "@nuxtjs/tailwindcss",
+  ],
+  svgo: {
+    defaultImport: "component",
+  },
+  tailwindcss: {
+    configPath: "tailwind.config",
+  },
+  googleFonts: {
+    families: {
+      Quicksand: [400, 500, 700],
+    },
+  },
+});

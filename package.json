@@ -10,18 +10,20 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/tailwindcss": "latest",
     "nuxt": "^3.11.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
     "@nuxt/eslint": "latest",
-    "@nuxtjs/tailwindcss": "latest",
+    "@nuxtjs/google-fonts": "latest",
     "@pinia/nuxt": "latest",
     "eslint": "^9.1.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
     "nuxt-icon": "^0.6.10",
+    "nuxt-svgo": "latest",
     "prettier": "^3.2.5"
   }
 }
