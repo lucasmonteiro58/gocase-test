@@ -6,7 +6,7 @@ const tablerTrash = h(Icon, { name: "tabler:trash" });
 </script>
 
 <template>
-  <div class="w-full flex gap-2">
+  <div class="w-full flex gap-2 justify-center">
     <VBtn
       rounded
       color="primary"
