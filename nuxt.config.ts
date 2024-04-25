@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "vuetify-nuxt-module",
     "@nuxtjs/tailwindcss",
+    "@vueuse/nuxt",
   ],
   svgo: {
     defaultImport: "component",

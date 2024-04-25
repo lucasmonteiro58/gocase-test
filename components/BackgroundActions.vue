@@ -3,6 +3,8 @@ import { Icon } from "#components";
 
 const tablerUpload = h(Icon, { name: "tabler:upload" });
 const tablerTrash = h(Icon, { name: "tabler:trash" });
+
+const { addRect } = useFabric();
 </script>
 
 <template>
@@ -13,6 +15,7 @@ const tablerTrash = h(Icon, { name: "tabler:trash" });
       variant="outlined"
       height="60px"
       :prepend-icon="tablerUpload"
+      @click="addRect"
     >
       Adicionar imagem
     </VBtn>

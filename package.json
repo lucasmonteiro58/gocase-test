@@ -22,6 +22,8 @@
     "@nuxt/eslint": "latest",
     "@nuxtjs/google-fonts": "latest",
     "@pinia/nuxt": "latest",
+    "@types/fabric": "^5.3.7",
+    "@vueuse/nuxt": "latest",
     "eslint": "^9.1.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
