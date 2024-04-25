@@ -23,6 +23,9 @@ export default <Partial<Config>>{
           900: indigo[900],
         },
       },
+      backgroundImage: {
+        phone: "url('~/assets/images/iphone15.png')",
+      },
     },
   },
 };

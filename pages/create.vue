@@ -20,16 +20,33 @@ onMounted(() => {
     <div>
       <TopBar />
 
-      <div class="sm:tw-px-4 tw-px-0 tw-w-fit tw-mx-auto">
-        <img
+      <div
+        class="sm:tw-px-4 tw-px-0 tw-mx-auto tw-h-[631px] tw-w-[330px] tw-relative"
+      >
+        <div
+          ref="refImg"
+          class="tw-bg-phone tw-w-full tw-h-full tw-bg-cover tw-absolute tw-top-0 tw-left-0"
+        ></div>
+        <div
+          class="clip-image-mask tw-top-0 tw-left-0 tw-w-full tw-h-full tw-absolute"
+        >
+          <!-- <img
           ref="refImg"
           src="~/assets/images/iphone15.png"
           alt="iphone15"
           class="tw-h-[calc(100vh-200px)] tw-w-auto tw-absolute"
-        />
+        /> -->
 
-        <canvas ref="refCanvas" class=""></canvas>
+          <canvas ref="refCanvas" class=""></canvas>
+        </div>
       </div>
     </div>
   </div>
 </template>
+<style>
+.clip-image-mask {
+  -webkit-mask-image: url("~/assets/images/mask.png");
+  mask-image: url("~/assets/images/mask.png");
+  mask-size: cover;
+}
+</style>
