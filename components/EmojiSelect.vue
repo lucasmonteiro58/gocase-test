@@ -25,7 +25,7 @@ const groupNames = {
         rounded
         color="primary"
         variant="outlined"
-        height="50px"
+        height="60px"
         :prepend-icon="mdiEmoticon"
       >
         Emoji

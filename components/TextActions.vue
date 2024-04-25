@@ -1,9 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="flex gap-2 justify-center">
-    <div class="w-3/5">
-      <FontSelect class="w-full" />
+  <div class="tw-flex tw-gap-2 tw-justify-center">
+    <div class="tw-w-3/5">
+      <FontSelect class="tw-w-full" />
     </div>
 
     <div>

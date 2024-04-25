@@ -2,6 +2,7 @@ import type { Config } from "tailwindcss";
 import { indigo } from "tailwindcss/colors";
 
 export default <Partial<Config>>{
+  prefix: "tw-",
   theme: {
     fontFamily: {
       sans: ["Quicksand", "sans-serif"],

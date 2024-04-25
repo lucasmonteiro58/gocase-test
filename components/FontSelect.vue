@@ -18,7 +18,7 @@ function removeSpaces(text: string) {
     flat
     rounded
     color="primary"
-    class="w-1/2"
+    class="tw-w-1/2"
     hide-details
   >
     <template #item="{ props, item }">

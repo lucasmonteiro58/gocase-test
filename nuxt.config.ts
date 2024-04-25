@@ -7,17 +7,14 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "nuxt-svgo",
     "@nuxtjs/google-fonts",
-    "@nuxtjs/tailwindcss",
     "vuetify-nuxt-module",
+    "@nuxtjs/tailwindcss",
   ],
   svgo: {
     defaultImport: "component",
   },
-  tailwindcss: {
-    configPath: "tailwind.config",
-  },
   imports: {
-    dirs: ["stores"],
+    dirs: ["stores", "composables"],
   },
   googleFonts: {
     families: {
@@ -46,6 +43,9 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  tailwindcss: {
+    configPath: "tailwind.config",
   },
   css: ["@/assets/styles/main.css", "vue3-emoji-picker/css"],
 });

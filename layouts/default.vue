@@ -2,7 +2,7 @@
 
 <template>
   <div
-    class="w-full h-screen flex justify-center flex-col items-center bg-primary-50"
+    class="tw-w-full tw-h-screen tw-flex tw-justify-center tw-flex-col tw-items-center tw-bg-primary-50"
   >
     <NuxtPage />
   </div>

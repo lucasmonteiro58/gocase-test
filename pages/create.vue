@@ -1,16 +1,16 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="flex gap-2">
+  <div class="tw-flex tw-gap-x-2 tw-gap-y-8 tw-flex-col sm:tw-flex-row">
     <SideActions />
     <div>
       <TopBar />
-      <div class="h-[calc(100vh-200px)]">
-        <div class="h-full px-8">
+      <div class="tw-h-[calc(100vh-200px)]">
+        <div class="tw-h-full sm:tw-px-4 tw-px-0 tw-w-fit tw-mx-auto">
           <img
             src="~/assets/images/iphone15.png"
             alt="iphone15"
-            class="h-full rounded-[2rem]"
+            class="tw-h-full"
           />
         </div>
       </div>

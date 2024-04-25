@@ -4,8 +4,8 @@ const router = useRouter();
 </script>
 
 <template>
-  <div class="flex flex-col items-center">
-    <Logo class="w-64 h-64" />
+  <div class="tw-flex tw-flex-col tw-items-center">
+    <Logo class="tw-w-64 tw-h-64" />
     <VBtn
       color="primary"
       rounded

@@ -12,7 +12,7 @@ const tablerSticker = h(Icon, { name: "tabler:sticker", size: "30px" });
 </script>
 
 <template>
-  <div class="flex flex-col gap-2 pt-20 min-w-[95px]">
+  <div class="tw-flex tw-flex-row sm:tw-flex-col tw-gap-2 tw-pt-2 sm:tw-pt-20">
     <VBtn
       stacked
       color="primary"
@@ -21,8 +21,9 @@ const tablerSticker = h(Icon, { name: "tabler:sticker", size: "30px" });
       flat
       :prepend-icon="tablerBackground"
       :active="editing === 'background'"
+      class="tw-flex-grow sm:tw-flex-grow-0"
       @click="appStore.setEditing('background')"
-      ><div class="text-xs">Fundo</div></VBtn
+      ><div class="tw-text-xs">Fundo</div></VBtn
     >
     <VBtn
       stacked
@@ -32,8 +33,9 @@ const tablerSticker = h(Icon, { name: "tabler:sticker", size: "30px" });
       flat
       :prepend-icon="tablerText"
       :active="editing === 'text'"
+      class="tw-flex-grow sm:tw-flex-grow-0"
       @click="appStore.setEditing('text')"
-      ><div class="text-xs">Texto</div></VBtn
+      ><div class="tw-text-xs">Texto</div></VBtn
     >
     <VBtn
       stacked
@@ -43,8 +45,9 @@ const tablerSticker = h(Icon, { name: "tabler:sticker", size: "30px" });
       flat
       :prepend-icon="tablerSticker"
       :active="editing === 'sticker'"
+      class="tw-flex-grow sm:tw-flex-grow-0"
       @click="appStore.setEditing('sticker')"
-      ><div class="text-xs">Sticker</div></VBtn
+      ><div class="tw-text-xs">Sticker</div></VBtn
     >
   </div>
 </template>
