@@ -47,5 +47,5 @@ export default defineNuxtConfig({
       },
     },
   },
-  css: ["@/assets/styles/main.css"],
+  css: ["@/assets/styles/main.css", "vue3-emoji-picker/css"],
 });

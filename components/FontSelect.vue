@@ -14,7 +14,7 @@ function removeSpaces(text: string) {
     label="Fonte"
     variant="outlined"
     height="50px"
-    density="comfortable"
+    density="compact"
     flat
     rounded
     color="primary"

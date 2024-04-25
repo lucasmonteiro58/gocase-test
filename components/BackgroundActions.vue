@@ -21,6 +21,7 @@ const tablerTrash = h(Icon, { name: "tabler:trash" });
       color="rgb(248 113 113)"
       variant="outlined"
       height="50px"
+      width="50px"
       :icon="tablerTrash"
     />
   </div>
