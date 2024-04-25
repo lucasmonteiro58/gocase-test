@@ -1,10 +1,16 @@
 <script setup lang="ts">
 const refCanvas = ref<HTMLCanvasElement | null>(null);
+const refImg = ref<HTMLImageElement | null>(null);
 
 const canvasStore = useCanvasStore();
 
+const { width, height } = useElementSize(refImg);
+
 onMounted(() => {
-  canvasStore.createCanvas(refCanvas.value!);
+  canvasStore.createCanvas(refCanvas.value!, {
+    width: width.value,
+    height: height.value,
+  });
 });
 </script>
 
@@ -13,17 +19,16 @@ onMounted(() => {
     <SideActions />
     <div>
       <TopBar />
-      <div class="tw-h-[calc(100vh-200px)]">
-        <div class="tw-h-full sm:tw-px-4 tw-px-0 tw-w-fit tw-mx-auto">
-          <img
-            ref="refImg"
-            src="~/assets/images/iphone15.png"
-            alt="iphone15"
-            class="tw-h-full tw-w-full"
-          />
 
-          <canvas ref="refCanvas" class="" width="296.91" height="568"></canvas>
-        </div>
+      <div class="sm:tw-px-4 tw-px-0 tw-w-fit tw-mx-auto">
+        <img
+          ref="refImg"
+          src="~/assets/images/iphone15.png"
+          alt="iphone15"
+          class="tw-h-[calc(100vh-200px)] tw-w-auto tw-absolute"
+        />
+
+        <canvas ref="refCanvas" class=""></canvas>
       </div>
     </div>
   </div>
