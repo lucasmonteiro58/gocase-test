@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Logo from "~/assets/images/logo.svg";
+import Logo from "~/assets/images/logo.png";
 const router = useRouter();
 </script>
 
 <template>
   <div class="tw-flex tw-flex-col tw-items-center">
-    <Logo class="tw-w-64 tw-h-64" />
+    <img :src="Logo" alt="logo" class="tw-mb-4 tw-w-[250px]" />
     <VBtn
       color="primary"
       rounded
@@ -14,7 +14,7 @@ const router = useRouter();
       flat
       @click="router.push('/create')"
     >
-      Começar
+      <span class="tw-text-lg">Começar</span>
     </VBtn>
   </div>
 </template>

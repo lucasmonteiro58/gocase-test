@@ -37,8 +37,8 @@ export default defineNuxtConfig({
         themes: {
           light: {
             colors: {
-              primary: "#6366f1",
-              primaryDark: "#4338ca",
+              primary: "#f59e0b",
+              primaryDark: "#b45309",
             },
           },
         },
