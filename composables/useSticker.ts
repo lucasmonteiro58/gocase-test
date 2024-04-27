@@ -5,7 +5,8 @@ export function useSticker() {
   const stickerStore = useStickerStore();
 
   const { canvas } = storeToRefs(canvasStore);
-  const { stickerUrl, stickerImg } = storeToRefs(stickerStore);
+  const { stickerUrl, stickerImg, hasSelectedSticker, stickers } =
+    storeToRefs(stickerStore);
 
   async function addSticker() {
     try {
@@ -21,6 +22,7 @@ export function useSticker() {
             width: 64,
           });
           stickerImg.value = oImg;
+          stickerStore.addSticker(stickerImg.value);
 
           canvas.value.add(markRaw(stickerImg.value));
         },
@@ -33,5 +35,20 @@ export function useSticker() {
     }
   }
 
-  return { addSticker };
+  function deleteSelectedStickers() {
+    const activeObjects = canvas.value.getActiveObjects();
+    activeObjects.forEach((object) => {
+      console.log(object.type);
+      if (object.type === "image") {
+        canvas.value.remove(object);
+      }
+    });
+
+    stickers.value = stickers.value.filter(
+      (stickerObject) => !activeObjects.includes(stickerObject)
+    );
+    canvas.value.discardActiveObject().renderAll();
+  }
+
+  return { addSticker, hasSelectedSticker, deleteSelectedStickers };
 }

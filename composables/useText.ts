@@ -4,7 +4,8 @@ export function useText() {
   const canvasStore = useCanvasStore();
   const textStore = useTextStore();
   const { canvas } = storeToRefs(canvasStore);
-  const { selectedFont, color, texts } = storeToRefs(textStore);
+  const { selectedFont, color, texts, hasSelectedText } =
+    storeToRefs(textStore);
 
   async function addEditableText() {
     try {
@@ -39,5 +40,24 @@ export function useText() {
     }
   }
 
-  return { addEditableText, updateTextProperties };
+  function deleteSelectedTexts() {
+    const activeObjects = canvas.value.getActiveObjects();
+    activeObjects.forEach((object) => {
+      if (object.type === "i-text") {
+        canvas.value.remove(object);
+      }
+    });
+
+    texts.value = texts.value.filter(
+      (textObject) => !activeObjects.includes(textObject)
+    );
+    canvas.value.discardActiveObject().renderAll();
+  }
+
+  return {
+    addEditableText,
+    updateTextProperties,
+    hasSelectedText,
+    deleteSelectedTexts,
+  };
 }

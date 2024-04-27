@@ -16,5 +16,10 @@ const router = useRouter();
     >
       <span class="tw-text-lg">Começar</span>
     </VBtn>
+
+    <div class="tw-fixed tw-bottom-10 tw-text-sm tw-text-center">
+      <div>Created by:</div>
+      <div>Lucas Monteiro</div>
+    </div>
   </div>
 </template>

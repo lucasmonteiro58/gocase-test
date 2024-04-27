@@ -15,9 +15,14 @@ export const useTextStore = defineStore("text", () => {
   const selectedFont = ref("Quicksand");
   const color = ref("#000000");
 
+  const hasSelectedText = computed(() => {
+    return texts.value.length > 0;
+  });
+
   return {
     fonts,
     selectedFont,
+    hasSelectedText,
     color,
     texts,
   };

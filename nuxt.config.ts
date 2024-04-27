@@ -2,6 +2,13 @@
 import { slate, amber } from "tailwindcss/colors";
 
 export default defineNuxtConfig({
+  app: {
+    head: {
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
+      title: "Make your Case",
+    },
+  },
   devtools: { enabled: true },
   modules: [
     "@pinia/nuxt",

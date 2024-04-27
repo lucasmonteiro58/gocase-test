@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { addEditableText } = useText();
+import { Icon } from "#components";
+const { addEditableText, hasSelectedText, deleteSelectedTexts } = useText();
+const tablerTrash = h(Icon, { name: "tabler:trash" });
 </script>
 
 <template>
@@ -20,6 +22,16 @@ const { addEditableText } = useText();
       @click="addEditableText"
     >
       Adicionar texto
+    </VBtn>
+    <VBtn
+      v-if="hasSelectedText"
+      rounded="lg"
+      color="rgb(248 113 113)"
+      variant="outlined"
+      :icon="tablerTrash"
+      height="40"
+      @click="deleteSelectedTexts"
+    >
     </VBtn>
   </div>
 </template>

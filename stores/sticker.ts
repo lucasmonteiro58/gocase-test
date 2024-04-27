@@ -19,6 +19,10 @@ export const useStickerStore = defineStore("sticker", () => {
     return stickers.value.find((s) => s === sticker);
   }
 
+  const hasSelectedSticker = computed(() => {
+    return stickers.value.length > 0;
+  });
+
   return {
     selectedSticker,
     stickerUrl,
@@ -26,5 +30,6 @@ export const useStickerStore = defineStore("sticker", () => {
     addSticker,
     stickerImg,
     getSticker,
+    hasSelectedSticker,
   };
 });
