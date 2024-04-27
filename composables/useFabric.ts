@@ -48,7 +48,7 @@ export function useFabric() {
       texts.value.push(textObject);
       canvas.value.add(markRaw(textObject));
       canvas.value.setActiveObject(markRaw(textObject));
-      markRaw(textObject).enterEditing();
+      markRaw(textObject).enterActiveMenu();
     } catch (error) {
       console.error("Error adding editable text:", error);
     }
