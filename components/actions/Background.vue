@@ -4,8 +4,16 @@ import { Icon } from "#components";
 const tablerUpload = h(Icon, { name: "tabler:upload" });
 const tablerTrash = h(Icon, { name: "tabler:trash" });
 
-const { addImage, removeImage } = useBackground();
+const { addImage, removeImage, unlockImage, lockImage } = useBackground();
 const canvasStore = useCanvasStore();
+
+onMounted(() => {
+  unlockImage();
+});
+
+onBeforeUnmount(() => {
+  lockImage();
+});
 </script>
 
 <template>
