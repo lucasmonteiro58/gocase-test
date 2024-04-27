@@ -6,6 +6,8 @@ const mdiColor = h(Icon, { name: "mdi:color" });
 const textStore = useTextStore();
 const { color } = storeToRefs(textStore);
 
+const show = ref(false);
+
 const { updateTextProperties } = useText();
 
 const swatches = [
@@ -22,7 +24,7 @@ watch(color, () => {
 </script>
 
 <template>
-  <v-menu :close-on-content-click="false">
+  <v-menu v-model="show" :close-on-content-click="false">
     <template #activator="{ props }">
       <VBtn
         v-bind="props"
@@ -34,15 +36,18 @@ watch(color, () => {
       >
       </VBtn>
     </template>
-    <div class="mt-2">
+    <div
+      class="mt-2 tw-bg-white tw-flex tw-flex-col tw-rounded-lg tw-shadow-lg"
+    >
       <v-color-picker
         v-model="color"
         hide-inputs
         show-swatches
         :swatches="swatches"
-        elevation="10"
+        elevation="0"
         mode="hexa"
       ></v-color-picker>
+      <VBtn variant="text" @click="show = false">Fechar</VBtn>
     </div>
   </v-menu>
 </template>

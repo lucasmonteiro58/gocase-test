@@ -12,9 +12,11 @@ export function useText() {
       const textObject = new fabric.IText("Clique para editar...", {
         fontFamily: selectedFont.value,
         fill: color.value,
-        left: 50,
-        top: 400,
+        left: (canvas.value?.width as number) / 2,
+        top: (canvas.value?.height as number) / 2,
         fontSize: 14,
+        originX: "center",
+        originY: "center",
       });
 
       texts.value.push(textObject);

@@ -17,9 +17,11 @@ export function useSticker() {
         function (oImg) {
           oImg.setOptions({
             lockScalingAspectRatio: true,
-            top: 300,
-            left: 100,
+            top: (canvas.value?.height as number) / 2,
+            left: (canvas.value?.width as number) / 2,
             width: 64,
+            originX: "center",
+            originY: "center",
           });
           stickerImg.value = oImg;
           stickerStore.addSticker(stickerImg.value);

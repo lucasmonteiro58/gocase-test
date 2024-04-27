@@ -10,14 +10,18 @@ export function useBackground() {
 
       fabric.Image.fromURL(imageUrl, function (oImg) {
         removeImage();
+        oImg.scaleToWidth((canvas.value?.width as number) - 50);
         oImg.setOptions({
           lockScalingAspectRatio: true,
-          top: 300,
+          left: (canvas.value?.width as number) / 2,
+          top: (canvas.value?.height as number) / 2,
           index: -9999,
           globalCompositeOperation: "destination-over",
           lockUniScaling: true,
+          originX: "center",
+          originY: "center",
         });
-        oImg.scaleToWidth((canvas.value?.width as number) - 50);
+
         backgroundImage.value = oImg;
 
         canvas.value.insertAt(markRaw(backgroundImage.value), 0, false);
