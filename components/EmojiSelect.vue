@@ -24,8 +24,8 @@ const groupNames = {
         v-bind="props"
         rounded
         color="primary"
-        variant="outlined"
-        height="60px"
+        variant="flat"
+        height="40px"
         :prepend-icon="mdiEmoticon"
       >
         Emoji

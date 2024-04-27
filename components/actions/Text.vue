@@ -4,13 +4,22 @@ const { addEditableText } = useFabric();
 
 <template>
   <div class="tw-flex tw-gap-2 tw-justify-center">
-    <div class="tw-w-3/5">
+    <div class="tw-w-2/5">
       <FontSelect class="tw-w-full" />
     </div>
 
     <div>
       <ColorSelect />
     </div>
-    <VBtn icon="mdi:format-bold" @click="addEditableText" />
+    <VBtn
+      color="primary"
+      height="40px"
+      rounded="lg"
+      variant="flat"
+      prepend-icon="mdi-plus"
+      @click="addEditableText"
+    >
+      Adicionar texto
+    </VBtn>
   </div>
 </template>

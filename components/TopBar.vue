@@ -6,8 +6,8 @@ const { activeMenu } = storeToRefs(appStore);
 
 <template>
   <div class="tw-py-4 tw-rounded-t-lg">
-    <BackgroundActions v-if="activeMenu === 'background'" />
-    <TextActions v-if="activeMenu === 'text'" />
-    <StickerActions v-if="activeMenu === 'sticker'" />
+    <ActionsBackground v-if="activeMenu === 'background'" />
+    <ActionsText v-if="activeMenu === 'text'" />
+    <ActionsSticker v-if="activeMenu === 'sticker'" />
   </div>
 </template>

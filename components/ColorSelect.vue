@@ -21,8 +21,8 @@ const swatches = [
       <VBtn
         v-bind="props"
         :icon="mdiColor"
-        height="60px"
-        width="60px"
+        height="40px"
+        width="40px"
         :color="color"
         flat
       >
