@@ -13,10 +13,10 @@ function removeSpaces(text: string) {
     :items="fonts"
     label="Fonte"
     variant="outlined"
-    height="50px"
+    height="40px"
     density="compact"
     flat
-    rounded
+    rounded="lg"
     color="primary"
     class="tw-w-1/2"
     hide-details

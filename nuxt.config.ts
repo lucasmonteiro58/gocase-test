@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { slate, amber } from "tailwindcss/colors";
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
@@ -37,8 +39,9 @@ export default defineNuxtConfig({
         themes: {
           light: {
             colors: {
-              primary: "#f59e0b",
-              primaryDark: "#b45309",
+              primary: slate[800],
+              primaryDark: slate[800],
+              secondary: amber[500],
             },
           },
         },
