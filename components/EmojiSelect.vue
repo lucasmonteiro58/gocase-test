@@ -1,8 +1,15 @@
 <script setup lang="ts">
 import { Icon } from "#components";
-import EmojiPicker from "vue3-emoji-picker";
+import EmojiPicker, { type EmojiExt } from "vue3-emoji-picker";
 
 const mdiEmoticon = h(Icon, { name: "mdi:emoji-outline" });
+
+const stickerStore = useStickerStore();
+
+const showEmojiPicker = ref(false);
+
+const { selectedSticker } = storeToRefs(stickerStore);
+const { addSticker } = useSticker();
 
 const groupNames = {
   smileys_people: "Emojis & Pessoas",
@@ -15,10 +22,16 @@ const groupNames = {
   flags: "Bandeiras",
   recent: "Recentemente usados",
 };
+
+function onSelectEmoji(emoji: EmojiExt) {
+  selectedSticker.value = emoji;
+  showEmojiPicker.value = false;
+  addSticker();
+}
 </script>
 
 <template>
-  <v-menu :close-on-content-click="false">
+  <v-menu v-model="showEmojiPicker" :close-on-content-click="false">
     <template #activator="{ props }">
       <VBtn
         v-bind="props"
@@ -40,6 +53,7 @@ const groupNames = {
           placeholder: 'Procurar emoji',
           skinTone: 'Tom de pele',
         }"
+        @select="onSelectEmoji"
       />
     </div>
   </v-menu>

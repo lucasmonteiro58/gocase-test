@@ -37,7 +37,7 @@ onMounted(() => {
       <TopBar />
 
       <div
-        class="tw-full tw-border-b tw-border-none sm:tw-border tw-border-gray-500 tw-py-4 tw-rounded-lg"
+        class="tw-full tw-border-b tw-border-none sm:tw-border tw-border-gray-500 tw-pb-4 tw-rounded-lg"
       >
         <div
           ref="refContainer"
