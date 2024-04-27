@@ -32,28 +32,28 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="tw-flex tw-gap-x-2 tw-gap-y-8 tw-flex-col">
-    <div>
-      <TopBar />
-
+  <div
+    class="tw-flex tw-flex-col tw-h-full tw-gap-x-2 tw-gap-y-2 tw-justify-center tw-items-center"
+  >
+    <AppTopBar />
+    <div
+      class="tw-full tw-border-b tw-border-none sm:tw-border tw-border-gray-500 tw-pb-4 tw-rounded-lg"
+    >
       <div
-        class="tw-full tw-border-b tw-border-none sm:tw-border tw-border-gray-500 tw-pb-4 tw-rounded-lg"
+        ref="refContainer"
+        class="tw-h-[calc(100vh-300px)] tw-w-full tw-relative tw-flex tw-justify-center tw-items-center"
       >
         <div
-          ref="refContainer"
-          class="tw-h-[calc(100vh-300px)] tw-w-full tw-relative tw-flex tw-justify-center tw-items-center"
-        >
-          <div
-            ref="refImg"
-            :style="sizeStyle"
-            class="tw-bg-phone tw-bg-cover tw-absolute"
-          ></div>
-          <div class="clip-image-mask tw-absolute" :style="sizeStyle">
-            <canvas ref="refCanvas" class="" :style="sizeStyle"></canvas>
-          </div>
+          ref="refImg"
+          :style="sizeStyle"
+          class="tw-bg-phone tw-bg-cover tw-absolute"
+        ></div>
+        <div class="clip-image-mask tw-absolute" :style="sizeStyle">
+          <canvas ref="refCanvas" class="" :style="sizeStyle"></canvas>
         </div>
       </div>
     </div>
+    <AppFooter></AppFooter>
   </div>
 </template>
 <style>
