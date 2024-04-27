@@ -3,8 +3,8 @@ const { addEditableText } = useText();
 </script>
 
 <template>
-  <div class="tw-flex tw-gap-2 tw-justify-center">
-    <div class="tw-w-2/5">
+  <div class="tw-flex tw-gap-x-2 tw-gap-y-3 tw-justify-center tw-flex-wrap">
+    <div class="sm:tw-w-1/5 tw-w-full">
       <FontSelect class="tw-w-full" />
     </div>
 

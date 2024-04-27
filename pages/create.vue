@@ -14,6 +14,8 @@ const { height } = useElementSize(refContainer);
 
 const width = computed(() => height.value * 0.52231);
 
+useKeyboardListener(canvasStore);
+
 const sizeStyle = computed(() => {
   return {
     width: width.value + "px",
