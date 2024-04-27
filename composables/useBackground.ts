@@ -1,10 +1,8 @@
 import { fabric } from "fabric";
 
-export function useFabric() {
+export function useBackground() {
   const canvasStore = useCanvasStore();
-  const textStore = useTextStore();
   const { canvas, backgroundImage } = storeToRefs(canvasStore);
-  const { selectedFont, color, texts } = storeToRefs(textStore);
 
   async function addImage() {
     try {
@@ -15,10 +13,13 @@ export function useFabric() {
         oImg.setOptions({
           lockScalingAspectRatio: true,
           top: 300,
+          index: -9999,
         });
         oImg.scaleToWidth((canvas.value?.width as number) - 50);
         backgroundImage.value = oImg;
-        canvas.value.add(markRaw(backgroundImage.value));
+
+        canvas.value.insertAt(markRaw(backgroundImage.value), 0, false);
+        //canvas.value.add(markRaw(backgroundImage.value));
       });
 
       canvas.value.renderAll();
@@ -35,24 +36,5 @@ export function useFabric() {
     }
   }
 
-  async function addEditableText() {
-    try {
-      const textObject = new fabric.IText("Edite o texto aqui", {
-        fontFamily: selectedFont.value,
-        fill: color.value,
-        left: 100,
-        top: 400,
-        fontSize: 24,
-      });
-
-      texts.value.push(textObject);
-      canvas.value.add(markRaw(textObject));
-      canvas.value.setActiveObject(markRaw(textObject));
-      markRaw(textObject).enterActiveMenu();
-    } catch (error) {
-      console.error("Error adding editable text:", error);
-    }
-  }
-
-  return { addImage, removeImage, addEditableText };
+  return { addImage, removeImage };
 }

@@ -2,9 +2,15 @@
 const textStore = useTextStore();
 const { selectedFont, fonts } = storeToRefs(textStore);
 
+const { updateTextProperties } = useText();
+
 function removeSpaces(text: string) {
   return text.replace(/\s/g, "");
 }
+
+watch(selectedFont, () => {
+  updateTextProperties();
+});
 </script>
 
 <template>

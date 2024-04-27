@@ -3,10 +3,8 @@
 <template>
   <VApp>
     <AppSideBar />
-    <AppTopBar />
-
     <v-main class="!tw-pr-0 sm:!tw-pr-2">
-      <v-container fluid class="!tw-px-5 !tw-pt-0">
+      <v-container fluid class="!tw-px-0 sm:!tw-px-5 !tw-pt-0">
         <NuxtPage />
       </v-container>
     </v-main>

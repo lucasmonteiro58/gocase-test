@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { addEditableText } = useFabric();
+const { addEditableText } = useText();
 </script>
 
 <template>

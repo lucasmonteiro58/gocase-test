@@ -4,7 +4,7 @@ import { Icon } from "#components";
 const tablerUpload = h(Icon, { name: "tabler:upload" });
 const tablerTrash = h(Icon, { name: "tabler:trash" });
 
-const { addImage, removeImage } = useFabric();
+const { addImage, removeImage } = useBackground();
 const canvasStore = useCanvasStore();
 </script>
 

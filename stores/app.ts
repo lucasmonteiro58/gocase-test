@@ -4,32 +4,21 @@ type TActiveMenu = "text" | "background" | "sticker" | null;
 
 export const useAppStore = defineStore("app", () => {
   const isOpen = ref(true);
-  const isCompact = ref(false);
-
   const { width } = useWindowSize();
 
-  const isDesktop = computed(() => width.value >= 1280);
-
-  function toogleMenu() {
-    if (isDesktop.value) {
-      isCompact.value = !isCompact.value;
-      return;
-    }
-    isOpen.value = !isOpen.value;
-  }
+  const isMobile = computed(() => width.value < 640);
 
   const activeMenu = ref<TActiveMenu>("background");
 
   function setActiveMenu(type: TActiveMenu) {
     activeMenu.value = type;
+    if (isMobile.value) isOpen.value = false;
   }
 
   return {
     activeMenu,
     setActiveMenu,
+    isMobile,
     isOpen,
-    isCompact,
-    isDesktop,
-    toogleMenu,
   };
 });

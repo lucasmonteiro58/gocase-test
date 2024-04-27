@@ -6,6 +6,8 @@ const mdiColor = h(Icon, { name: "mdi:color" });
 const textStore = useTextStore();
 const { color } = storeToRefs(textStore);
 
+const { updateTextProperties } = useText();
+
 const swatches = [
   ["#065f46", "#059669", "#34d399"],
   ["#991b1b", "#dc2626", "#fca5a5"],
@@ -13,6 +15,10 @@ const swatches = [
   ["#1e40af", "#2563eb", "#60a5fa"],
   ["#86198f", "#c026d3", "#e879f9"],
 ];
+
+watch(color, () => {
+  updateTextProperties();
+});
 </script>
 
 <template>

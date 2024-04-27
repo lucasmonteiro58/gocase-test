@@ -10,44 +10,33 @@ const tablerText = h(Icon, { name: "tabler:text-recognition", size: "30px" });
 const tablerSticker = h(Icon, { name: "tabler:sticker", size: "30px" });
 
 const appStore = useAppStore();
-const { activeMenu, isDesktop, isOpen, isCompact } = storeToRefs(appStore);
-
-watch(isDesktop, (value) => {
-  if (value) {
-    isOpen.value = true;
-    isCompact.value = false;
-  } else {
-    isOpen.value = false;
-    isCompact.value = false;
-  }
-});
+const { activeMenu, isMobile } = storeToRefs(appStore);
 </script>
 
 <template>
   <VNavigationDrawer
-    v-model="appStore.isOpen"
+    permanent
     width="270"
-    :rail="appStore.isCompact"
+    :rail="isMobile"
     left
-    expand-on-hover
-    rail-width="75"
+    :rail-width="50"
     elevation="0"
     class="!tw-shadow-none tw-border-r !tw-border-borderLight"
   >
-    <div class="tw-pt-5 tw-px-2 tw-flex tw-justify-center">
+    <div class="tw-pt-5 tw-px-0 sm:tw-px-2 tw-flex tw-justify-center">
       <img
         :src="Logo"
         alt="logo"
-        class="tw-mb-1 tw-w-[80px] sm:tw-w-[90px] tw-mx-auto"
+        class="tw-mb-1 tw-w-[40px] sm:tw-w-[90px] tw-mx-auto"
       />
     </div>
-    <VList class="!tw-p-5" color="primary" :class="isCompact && '!tw-px-3.5'">
+    <VList class="!tw-px-1 sm:!tw-px-2" color="primary">
       <VListItem
         rounded="lg"
         :active="activeMenu === 'background'"
         color="primary"
         base-color="primary"
-        :class="isCompact && '!tw-px-3'"
+        class="!tw-px-2 sm:!tw-px-4"
         @click="appStore.setActiveMenu('background')"
       >
         <template #prepend>
@@ -60,7 +49,7 @@ watch(isDesktop, (value) => {
         :active="activeMenu === 'text'"
         color="primary"
         base-color="primary"
-        :class="isCompact && '!tw-px-3'"
+        class="!tw-px-2 sm:!tw-px-4"
         @click="appStore.setActiveMenu('text')"
       >
         <template #prepend>
@@ -73,7 +62,7 @@ watch(isDesktop, (value) => {
         color="primary"
         base-color="primary"
         :active="activeMenu === 'sticker'"
-        :class="isCompact && '!tw-px-3'"
+        class="!tw-px-2 sm:!tw-px-4"
         @click="appStore.setActiveMenu('sticker')"
       >
         <template #prepend>
