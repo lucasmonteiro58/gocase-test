@@ -9,12 +9,14 @@ const refImg = ref<HTMLImageElement | null>(null);
 const refContainer = ref<HTMLImageElement | null>(null);
 
 const canvasStore = useCanvasStore();
+const textStore = useTextStore();
+const stickerStore = useStickerStore();
 
 const { height } = useElementSize(refContainer);
 
 const width = computed(() => height.value * 0.52231);
 
-useKeyboardListener(canvasStore);
+useKeyboardListener(canvasStore, textStore, stickerStore);
 
 const sizeStyle = computed(() => {
   return {
