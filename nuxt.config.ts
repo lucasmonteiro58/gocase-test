@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     defaultImport: "component",
   },
   imports: {
-    dirs: ["stores", "composables"],
+    dirs: ["stores", "composables", "utils"],
   },
   googleFonts: {
     families: {

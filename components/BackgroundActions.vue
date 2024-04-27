@@ -4,7 +4,8 @@ import { Icon } from "#components";
 const tablerUpload = h(Icon, { name: "tabler:upload" });
 const tablerTrash = h(Icon, { name: "tabler:trash" });
 
-const { addRect } = useFabric();
+const { addImage, removeImage } = useFabric();
+const canvasStore = useCanvasStore();
 </script>
 
 <template>
@@ -15,17 +16,19 @@ const { addRect } = useFabric();
       variant="outlined"
       height="60px"
       :prepend-icon="tablerUpload"
-      @click="addRect"
+      @click="addImage"
     >
       Adicionar imagem
     </VBtn>
     <VBtn
+      v-if="canvasStore.backgroundImage"
       rounded="full"
       color="rgb(248 113 113)"
       variant="outlined"
       height="60px"
       width="60px"
       :icon="tablerTrash"
+      @click="removeImage"
     />
   </div>
 </template>

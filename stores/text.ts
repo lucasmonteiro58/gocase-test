@@ -11,6 +11,7 @@ export const useTextStore = defineStore("text", () => {
     "Zilla Slab",
   ]);
 
+  const texts = ref([] as fabric.IText[]);
   const selectedFont = ref("Quicksand");
   const color = ref("#000000");
 
@@ -18,5 +19,6 @@ export const useTextStore = defineStore("text", () => {
     fonts,
     selectedFont,
     color,
+    texts,
   };
 });

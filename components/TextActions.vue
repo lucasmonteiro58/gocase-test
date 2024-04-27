@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { addEditableText } = useFabric();
+</script>
 
 <template>
   <div class="tw-flex tw-gap-2 tw-justify-center">
@@ -9,5 +11,6 @@
     <div>
       <ColorSelect />
     </div>
+    <VBtn icon="mdi:format-bold" @click="addEditableText" />
   </div>
 </template>
