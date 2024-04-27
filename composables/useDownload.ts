@@ -26,6 +26,7 @@ export function useDownload() {
 function createImage(dataURL: string): HTMLImageElement {
   const img: HTMLImageElement = new Image();
   img.src = dataURL;
+  img.crossOrigin = "anonymous";
   return img;
 }
 
