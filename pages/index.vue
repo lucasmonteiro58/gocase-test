@@ -11,6 +11,7 @@ const router = useRouter();
       rounded
       height="50px"
       width="200px"
+      class="tw-mb-20"
       flat
       @click="router.push('/create')"
     >
