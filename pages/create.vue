@@ -26,9 +26,11 @@ const sizeStyle = computed(() => {
 });
 
 onMounted(() => {
+  canvasStore.createHammer(refCanvas.value!);
   canvasStore.createCanvas(refCanvas.value!, {
     width: width.value,
     height: height.value,
+    selection: false,
   });
 });
 </script>
