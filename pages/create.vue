@@ -26,12 +26,10 @@ const sizeStyle = computed(() => {
 });
 
 onMounted(() => {
-  setTimeout(() => {
-    canvasStore.createCanvas(refCanvas.value!, {
-      width: width.value,
-      height: height.value,
-    });
-  }, 2000);
+  canvasStore.createCanvas(refCanvas.value!, {
+    width: width.value,
+    height: height.value,
+  });
 });
 </script>
 
