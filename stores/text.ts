@@ -11,12 +11,18 @@ export const useTextStore = defineStore("text", () => {
     "Zilla Slab",
   ]);
 
+  const canvasStore = useCanvasStore();
+  const { activeObjects } = storeToRefs(canvasStore);
+
   const texts = ref([] as fabric.IText[]);
   const selectedFont = ref("Quicksand");
   const color = ref("#000000");
 
   const hasSelectedText = computed(() => {
-    return texts.value.length > 0;
+    return (
+      texts.value.length > 0 &&
+      activeObjects.value.some((o) => o.type === "i-text")
+    );
   });
 
   return {
