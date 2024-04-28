@@ -7,6 +7,9 @@ export default defineNuxtConfig({
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
       title: "Make your Case",
+      htmlAttrs: {
+        lang: "pt-BR",
+      },
     },
   },
   devtools: { enabled: true },
