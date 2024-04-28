@@ -35,7 +35,7 @@ function onSelectEmoji(emoji: EmojiExt) {
     <template #activator="{ props }">
       <VBtn
         v-bind="props"
-        rounded
+        rounded="lg"
         color="primary"
         variant="flat"
         height="40px"
