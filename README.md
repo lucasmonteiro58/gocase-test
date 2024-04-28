@@ -30,4 +30,3 @@ bun run dev
 ## Authors
 
 - **Lucas Monteiro** - *GitHub* - [lucasmonteiro58](https://github.com/lucasmonteiro58)
-
