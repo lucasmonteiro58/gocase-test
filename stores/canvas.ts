@@ -32,6 +32,7 @@ export const useCanvasStore = defineStore("canvas", () => {
     hammer.value.get("pinch").set({ enable: true });
 
     hammer.value.on("pinch", (e) => {
+      alert(e);
       const activeObject = canvas.value.getActiveObject();
       if (activeObject && activeObject.type === "image") {
         const newScale = (activeObject.scaleX ?? 1) * e.scale;
