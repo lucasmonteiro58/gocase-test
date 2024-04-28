@@ -17,7 +17,6 @@ export const useCanvasStore = defineStore("canvas", () => {
     canvas.value = new fabric.Canvas(canvasElement, options);
 
     canvas.value.on("selection:created", (e) => {
-      console.log(e);
       setActiveObjects(e.selected || []);
     });
 

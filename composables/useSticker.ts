@@ -40,7 +40,6 @@ export function useSticker() {
   function deleteSelectedStickers() {
     const activeObjects = canvas.value.getActiveObjects();
     activeObjects.forEach((object) => {
-      console.log(object.type);
       if (object.type === "image") {
         canvas.value.remove(object);
       }
