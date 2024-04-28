@@ -4,17 +4,22 @@ export function useText() {
   const canvasStore = useCanvasStore();
   const textStore = useTextStore();
   const { canvas } = storeToRefs(canvasStore);
-  const { selectedFont, color, texts, hasSelectedText } =
+  const { selectedFont, color, texts, hasSelectedText, textDecoration } =
     storeToRefs(textStore);
 
   async function addEditableText() {
     try {
-      const textObject = new fabric.IText("Clique para editar...", {
+      const textObject = new fabric.IText("Digite aqui..", {
         fontFamily: selectedFont.value,
         fill: color.value,
+        underline: textDecoration.value?.includes("underline"),
+        fontWeight: textDecoration.value?.includes("bold") ? 800 : "normal",
+        fontStyle: textDecoration.value?.includes("italic")
+          ? "italic"
+          : "normal",
         left: (canvas.value?.width as number) / 2,
         top: (canvas.value?.height as number) / 2,
-        fontSize: 14,
+        fontSize: 16,
         originX: "center",
         originY: "center",
       });
@@ -37,6 +42,11 @@ export function useText() {
       activeObject.setOptions({
         fontFamily: selectedFont.value,
         fill: color.value,
+        underline: textDecoration.value?.includes("underline"),
+        fontWeight: textDecoration.value?.includes("bold") ? 900 : 500,
+        fontStyle: textDecoration.value?.includes("italic")
+          ? "italic"
+          : "normal",
       });
       canvas.value.renderAll();
     }

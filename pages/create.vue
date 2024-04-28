@@ -31,7 +31,6 @@ onMounted(() => {
     height: height.value,
     selection: false,
   });
-  canvasStore.createHammer(refCanvas.value!);
 });
 </script>
 

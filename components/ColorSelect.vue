@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import { Icon } from "#components";
-
-const mdiColor = h(Icon, { name: "mdi:color" });
-
 const textStore = useTextStore();
 const { color } = storeToRefs(textStore);
 
@@ -28,12 +24,12 @@ watch(color, () => {
     <template #activator="{ props }">
       <VBtn
         v-bind="props"
-        :icon="mdiColor"
         height="40px"
-        width="40px"
+        elevation="0"
+        class="!tw-rounded-s-none"
         :color="color"
-        flat
       >
+        <VIcon>mdi-format-color-fill</VIcon>
       </VBtn>
     </template>
     <div

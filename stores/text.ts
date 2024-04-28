@@ -1,11 +1,17 @@
 export const useTextStore = defineStore("text", () => {
   const fonts = ref([
+    "Acme",
+    "Anton",
+    "Bangers",
+    "Bebas Neue",
     "Cutive Mono",
     "Dancing Script",
     "DM Serif Display",
-    "Open Sans",
+    "Jacquard 24",
+    "Khand",
+    "Lobster",
+    "Oswald",
     "Pacifico",
-    "Quicksand",
     "Roboto",
     "Rubik Mono One",
     "Zilla Slab",
@@ -15,8 +21,9 @@ export const useTextStore = defineStore("text", () => {
   const { activeObjects } = storeToRefs(canvasStore);
 
   const texts = ref([] as fabric.IText[]);
-  const selectedFont = ref("Quicksand");
-  const color = ref("#000000");
+  const selectedFont = ref("Anton");
+  const color = ref("#303a4a");
+  const textDecoration = ref<("underline" | "bold" | "italic")[]>([]);
 
   const hasSelectedText = computed(() => {
     return (
@@ -30,6 +37,7 @@ export const useTextStore = defineStore("text", () => {
     selectedFont,
     hasSelectedText,
     color,
+    textDecoration,
     texts,
   };
 });

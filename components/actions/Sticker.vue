@@ -9,6 +9,7 @@ const { hasSelectedSticker, deleteSelectedStickers } = useSticker();
 <template>
   <div class="tw-flex tw-justify-center tw-gap-2">
     <EmojiSelect />
+
     <VBtn
       v-if="hasSelectedSticker"
       rounded="lg"

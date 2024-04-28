@@ -10,9 +10,7 @@ const tablerTrash = h(Icon, { name: "tabler:trash" });
       <FontSelect class="tw-w-full" />
     </div>
 
-    <div>
-      <ColorSelect />
-    </div>
+    <div><TextOptions /></div>
     <VBtn
       color="primary"
       height="40px"
@@ -21,17 +19,19 @@ const tablerTrash = h(Icon, { name: "tabler:trash" });
       prepend-icon="mdi-plus"
       @click="addEditableText"
     >
-      Adicionar texto
+      Adicionar
     </VBtn>
-    <VBtn
-      v-if="hasSelectedText"
-      rounded="lg"
-      color="rgb(248 113 113)"
-      variant="outlined"
-      :icon="tablerTrash"
-      height="40"
-      @click="deleteSelectedTexts"
-    >
-    </VBtn>
+    <div class="sm:tw-w-[48px] tw-w-fit">
+      <VBtn
+        v-if="hasSelectedText"
+        rounded="lg"
+        color="rgb(248 113 113)"
+        variant="outlined"
+        :icon="tablerTrash"
+        height="40"
+        @click="deleteSelectedTexts"
+      >
+      </VBtn>
+    </div>
   </div>
 </template>
